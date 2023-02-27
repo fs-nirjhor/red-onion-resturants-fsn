@@ -8,11 +8,11 @@ import { faCartShopping, faPlus, faMinus } from '@fortawesome/free-solid-svg-ico
 
 const Quantity = () => {
 	const {itemID} = useParams();
-	const selectedItem = foodMenu.find(item => item.id == itemID);
+	const selectedItem = foodMenu.find(item => item.id === itemID);
 	const {name, price, image} = selectedItem;
 return (
 	<Row>
-	   <Col xs={6}>
+	   <Col xs={12} md={6} xs={{order: 'last'}} md={{order:"first"}}>
 	      <h3>{name}</h3>
 	      <p>Gay one the what walk then she Demesne mention promise you justice arrived way. Amazing foods are Or and increasing to in especially inquietude companions acceptance admiration Outweigh it families distance wandered ye!</p>
 	      <div>
@@ -26,7 +26,7 @@ return (
 	      <Button variant="danger" size="sm" className="add-btn my-2">
 	      <FontAwesomeIcon icon={faCartShopping} /> Add</Button>
 	   </Col>
-	   <Col xs={6} className="d-flex align-items-center">
+	   <Col xs={12} md={6} className="d-flex align-items-center py-3">
 	     <img src={image} alt="food" className="img-fluid"/>
 	   </Col>
 	</Row>

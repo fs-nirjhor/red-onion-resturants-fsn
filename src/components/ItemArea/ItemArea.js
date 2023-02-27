@@ -1,6 +1,7 @@
 import Row from 'react-bootstrap/Row';
 import foodMenu from "../../data/foodMenu";
 import Items from "../Items/Items";
+import "./ItemArea.css";
 import { Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 
@@ -17,7 +18,8 @@ return (
 			categoriesItem.map(food => <Items food={food} key={food.id}/>)
 		}
 	</Row>
-	<Button variant="danger" className="my-5 px-5">Checkout Your Food</Button>
+	<Button variant="secondary" className="my-5 px-5 checkout-btn" onClick = { () => console.log("Checkout") }
+		>Checkout Your Food</Button>
 	</div>
 );
 };

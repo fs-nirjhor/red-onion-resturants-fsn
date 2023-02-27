@@ -10,10 +10,10 @@ const Abouts = (props) => {
   	<Card className="g-4 h-100 items">
       <Card.Img variant="top" src={image}/>
       <Card.Body className="row">
-      <div className="col-3">
+      <div className="col-md-3 text-center mb-2">
         <img src={icon} alt="icon"/>
       </div>
-        <div className="col-9">
+        <div className="col-md-9">
         <Card.Title >
         {title}</Card.Title>
         <Card.Text className="text-muted">
