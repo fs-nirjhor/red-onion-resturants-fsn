@@ -1,0 +1,23 @@
+.hero-image {
+  max-width: 100%;
+  min-height: 20vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.search-bar button{
+	padding: 5px 20px;
+	border-radius: 50px;
+	margin-left: -30px;
+	background-color: red;
+}
+.search-bar input{
+	padding: 5px 20px;
+	border-radius: 50px;
+	border: 0;
+}
+.search-bar input:focus {
+	outline: 0;
+	background-color: azure;
+}

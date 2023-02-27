@@ -1,0 +1,11 @@
+.footer-list a{
+	display: block;
+	color: white;
+	text-decoration: none;
+}
+.footer-line a {
+	color: white;
+	text-decoration: none;
+	margin: 20px;
+	white-space: nowrap; 
+}
