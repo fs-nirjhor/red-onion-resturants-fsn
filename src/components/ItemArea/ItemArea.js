@@ -25,7 +25,6 @@ const ItemArea = (props) => {
         variant="secondary"
         className="my-5 checkout-btn w-50 will-disable-button"
         onClick={() => navigate("/delivery-details")}
-        undefined
       >
         Checkout Your Food
       </Button>

@@ -29,7 +29,7 @@ return (
 			<span>$320.00</span>
 			</p>
 		</div>
-		<Button variant="secondary" className="w-100 will-disable-button" undefined onClick = { () => navigate("/location") }
+		<Button variant="secondary" className="w-100 will-disable-button" onClick = { () => navigate("/location") }
 			>Place Order</Button>
 	</div>
 );
