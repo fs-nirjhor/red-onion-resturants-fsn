@@ -12,7 +12,7 @@ const Quantity = () => {
 	const {name, price, image} = selectedItem;
 return (
 	<Row>
-	   <Col xs={12} md={6} xs={{order: 'last'}} md={{order:"first"}}>
+	   <Col xs={{span: 12, order: 'last'}} md={{span: 6, order:"first"}}>
 	      <h3>{name}</h3>
 	      <p>Gay one the what walk then she Demesne mention promise you justice arrived way. Amazing foods are Or and increasing to in especially inquietude companions acceptance admiration Outweigh it families distance wandered ye!</p>
 	      <div>
