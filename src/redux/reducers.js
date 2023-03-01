@@ -2,20 +2,37 @@ import foodMenu from "../data/foodMenu";
 
 const initialState = {
   cart: [],
-  menu: foodMenu,
+  loggedUser: {},
+  foodMenu: foodMenu,
 };
 
-export const cartReducer = (state = initialState, action) => {
+export const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case "ADD_TO_CART":
+       const newCart = [...state.cart, action.item];
+      return { ...state, cart: newCart };
+
     case "INCREASE_QUANTITY":
-      const newItem = { ...action.item, serial: state.cart.length + 1 };
-      const newCart = [...state.cart, newItem];
-      return { cart: newCart };
+    	const increasedFoodMenu = [...state.foodMenu] ;
+      const increasedItem = increasedFoodMenu.find(item => item === action.item);
+      increasedItem.quantity = action.item.quantity + 1;
+      return {...state, foodMenu: increasedFoodMenu};
+
     case "DECREASE_QUANTITY":
-      const remainingCart = state.cart.filter(
-        (item) => item.serial !== action.item.serial
-      );
-      return { cart: remainingCart };
+      const decreasedFoodMenu = [...state.foodMenu] ;
+      const decreasedItem = decreasedFoodMenu.find(item => item === action.item);
+      if (decreasedItem.quantity > 0) {
+      decreasedItem.quantity = action.item.quantity - 1;
+      }
+      return {...state, foodMenu: decreasedFoodMenu};
+
+    case "ADD_LOGGED_USER":
+      const newUser = {
+        name: action.user.displayName,
+        email: action.user.email,
+      };
+      return {...state, loggedUser: newUser };
+
     default:
       return state;
   }

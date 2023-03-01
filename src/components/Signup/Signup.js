@@ -1,4 +1,5 @@
-import React from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { Form, Button } from "react-bootstrap";
 import logo from "../../images/logo2.png";
@@ -11,6 +12,8 @@ import {
 } from "firebase/auth";
 
 function Signup() {
+	const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState("");
   const auth = getAuth(app);
   const {
     register,
@@ -28,15 +31,16 @@ function Signup() {
         });
         const user = userCredential.user;
         console.log(user);
+        navigate("/login");
       })
       .catch((error) => {
         const errorCode = error.code;
-        console.log(errorCode);
+        setErrorMessage(errorCode);
       });
   };
 
   return (
-    <section className="my-form text-center mx-5 mb-5">
+    <section className="my-form text-center mx-md-5 mb-5">
       <img src={logo} alt="brand" className="w-100 p-5" />
       <Form onSubmit={handleSubmit(onSubmit)} className="px-5">
         <Form.Group>
@@ -102,7 +106,7 @@ function Signup() {
               <Form.Text>This field is required</Form.Text>
             )}
         </Form.Group>
-
+        <p className="text-danger font-monospace ">{errorMessage}</p>
         <Button variant="danger" type="submit" className="w-100">
           Signup
         </Button>

@@ -1,12 +1,12 @@
 import Row from "react-bootstrap/Row";
-import foodMenu from "../../data/foodMenu";
 import Items from "../Items/Items";
 import { Button } from "react-bootstrap";
 import { useParams, useNavigate } from "react-router-dom";
+import { connect } from "react-redux";
 import "./ItemArea.css";
 
 const ItemArea = (props) => {
-  const { defaultCategory } = props;
+  const { defaultCategory, foodMenu } = props;
   const { category } = useParams();
   const navigate = useNavigate();
   const displayCategory = category ? category : defaultCategory;
@@ -32,4 +32,8 @@ const ItemArea = (props) => {
   );
 };
 
-export default ItemArea;
+const mapStateToProps = (state) => {
+  return { foodMenu: state.foodMenu };
+};
+
+export default connect(mapStateToProps)(ItemArea);

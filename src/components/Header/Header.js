@@ -11,7 +11,7 @@ const Header = () => {
     backgroundColor: "red",
   };
   return (
-    <header>
+    <header className="sticky-top">
       <Navbar bg="light" variant="light">
         <Container>
           <NavLink to="/" className="navbar-brand">

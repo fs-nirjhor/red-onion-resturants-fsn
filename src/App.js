@@ -8,10 +8,10 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import DeliveryDetails from "./components/DeliveryDetails/DeliveryDetails";
 import Location from "./components/Location/Location";
 import { Routes, Route } from "react-router-dom";
+import {connect} from "react-redux";
 
-
-function App() {
-	const isAllowed = true;
+function App(props) {
+	const {loggedUser} = props;
   return (
     <div >
     <Routes >
@@ -22,7 +22,7 @@ function App() {
           <Route path="/login" element={<Login/>}/>
           <Route path="/signup" element={<Signup/>}/>
           
-          <Route element={<PrivateRoute isAllowed={isAllowed}/>}>
+          <Route element={<PrivateRoute isAllowed={!!loggedUser}/>}>
             <Route path="/delivery-details" element={<DeliveryDetails/>}/>
             <Route path="/location" element={<Location/>}/>
           </Route>
@@ -33,4 +33,8 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+	return {loggedUser:state.loggedUser};
+};
+
+export default connect(mapStateToProps)(App);
