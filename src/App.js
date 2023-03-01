@@ -22,7 +22,7 @@ function App(props) {
           <Route path="/login" element={<Login/>}/>
           <Route path="/signup" element={<Signup/>}/>
           
-          <Route element={<PrivateRoute isAllowed={!!loggedUser}/>}>
+          <Route element={<PrivateRoute isAllowed={!!loggedUser.email}/>}>
             <Route path="/delivery-details" element={<DeliveryDetails/>}/>
             <Route path="/location" element={<Location/>}/>
           </Route>

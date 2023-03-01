@@ -18,7 +18,7 @@ const Quantity = (props) => {
   const { name, price, image, quantity } = selectedItem;
   const handleAdd = () => {
   	addToCart(selectedItem);
-  //	navigate(-1);
+  	navigate(-1);
   };
   return (
     <Row>
