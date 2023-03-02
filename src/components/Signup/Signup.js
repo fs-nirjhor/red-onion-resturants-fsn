@@ -116,7 +116,7 @@ function Signup() {
           Signup
         </Button>
       </Form>
-      <Link to="/login" className="d-block mt-3 text-decoration-none">Already have an account?</Link>
+      <Link to="/login" className="d-block mt-3 text-decoration-none text-danger">Already have an account?</Link>
     </section>
   );
 }

@@ -28,7 +28,7 @@ const Location = (props) => {
           <h1>9:30</h1>
           <p className="text-muted">Estimate Delivery Time</p>
         </div>
-        <Row className="rounded-4 background-white p-2 m-1">
+        <Row className="rounded-4 background-white p-2 m-1 ">
           <Col xs={4}>
             <img src={raider} alt="raider" className="img-fluid h-100" />
           </Col>

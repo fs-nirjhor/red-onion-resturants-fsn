@@ -29,11 +29,9 @@ export const reducer = (state = initialState, action) => {
       const newCart = [...state.cart];
       const addedItem = newCart.find(item => item.id === action.item.id);
       if (addedItem) {
-      addedItem.quantity = action.item.quantity;
-      return { ...state, cart: newCart, pricing: newPricing };
-      } else {
-      	return {...state, cart: [...state.cart,action.item], pricing: newPricing};
-      }
+      addedItem.quantity = action.item.quantity }
+      const addedCart = addedItem ? newCart : [...state.cart, action.item]; 
+      return { ...state, cart: addedCart, pricing: newPricing };
       
     case 'REMOVE_FROM_CART':
     	const refreshedCart = state.cart.filter(item => item.id !== action.item.id);

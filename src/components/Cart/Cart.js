@@ -10,8 +10,8 @@ const Cart = (props) => {
   const navigate = useNavigate();
   return (
     <section>
-      <div>
       { deliveryInfo?.address && 
+      <div>
         <p>
           From <strong>{deliveryInfo?.business}</strong>
         </p>

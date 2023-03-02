@@ -77,7 +77,7 @@ const Login = (props) => {
           Login
         </Button>
       </Form>
-      <Link to="/signup" className="d-block mt-3 text-decoration-none">Don't have an account?</Link>
+      <Link to="/signup" className="d-block mt-3 text-decoration-none text-danger">Don't have an account?</Link>
     </section>
   );
 };
