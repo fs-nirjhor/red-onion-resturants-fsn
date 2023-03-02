@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { Form, Button } from "react-bootstrap";
 import logo from "../../images/logo2.png";
@@ -46,10 +46,15 @@ function Signup() {
         <Form.Group>
           <Form.Control
             type="text"
-            placeholder="Name"
-            {...register("name", { required: true })}
+            placeholder="Username"
+            {...register("name", { required: true, pattern: /^[a-zA-Z]{0,10}$/ })}
           />
-          {errors.name && <Form.Text>This field is required</Form.Text>}
+          {errors.name && errors.name.type === "required" && (
+            <Form.Text>This field is required</Form.Text>
+          )}
+          {errors.name && errors.name.type === "pattern" && (
+            <Form.Text>Username must be less than 10 letter</Form.Text>
+          )}
         </Form.Group>
 
         <Form.Group>
@@ -111,6 +116,7 @@ function Signup() {
           Signup
         </Button>
       </Form>
+      <Link to="/login" className="d-block mt-3 text-decoration-none">Already have an account?</Link>
     </section>
   );
 }

@@ -8,16 +8,20 @@ import {
   faMinus,
 } from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
-import { increaseQuantity, decreaseQuantity, addToCart } from "../../redux/actions";
+import { increaseQuantity, decreaseQuantity, addToCart, removeFromCart } from "../../redux/actions";
 
 const Quantity = (props) => {
-  const { cart, foodMenu, increaseQuantity, decreaseQuantity, addToCart} = props;
+  const { foodMenu, increaseQuantity, decreaseQuantity, addToCart, removeFromCart} = props;
   const { itemID } = useParams();
   const navigate = useNavigate();
   const selectedItem = foodMenu.find((item) => item.id === itemID);
   const { name, price, image, quantity } = selectedItem;
   const handleAdd = () => {
   	addToCart(selectedItem);
+  	navigate(-1);
+  };
+  const handleCancel = () => {
+  	removeFromCart(selectedItem);
   	navigate(-1);
   };
   return (
@@ -38,11 +42,17 @@ const Quantity = (props) => {
             <FontAwesomeIcon icon={faPlus} onClick={() => increaseQuantity(selectedItem)} />
           </span>
         </div>
+        { quantity ?
         <Button variant="danger" size="sm" className="d-block add-btn my-2" onClick = {handleAdd}>
-          <FontAwesomeIcon icon={faCartShopping} /> 
-          Add
+          <FontAwesomeIcon icon={faCartShopping} className="me-2"/> 
+           Add
         </Button>
-        <p>{cart.length}</p>
+        : 
+        <Button variant="danger" size="sm" className="d-block add-btn my-2" onClick = {handleCancel}>
+          <FontAwesomeIcon icon={faCartShopping} className="me-2"/> 
+           Cancel
+        </Button>
+        }
       </Col>
       <Col xs={12} md={6} className="d-flex align-items-center py-3">
         <img src={image} alt="food" className="img-fluid" />
@@ -53,14 +63,14 @@ const Quantity = (props) => {
 
 const mapStateToProps = (state) => {
   return { 
-  	cart: state.cart , 
   	foodMenu: state.foodMenu 
   }
 };
 const mapDispatchToProps = {
   increaseQuantity: increaseQuantity,
   decreaseQuantity: decreaseQuantity,
-  addToCart: addToCart
+  addToCart: addToCart,
+  removeFromCart: removeFromCart
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Quantity);

@@ -1,38 +1,59 @@
 import CartItem from "../CartItem/CartItem";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { connect } from "react-redux";
 
-const Cart = () => {
-	const navigate = useNavigate();
-return (
-	<div>
-		<p>From <b>Gulshan Plaza Restaura GPR</b></p>
-		<p>Arriving in 20-30 min</p>
-		<p>107 Rd No 8</p>
-		<CartItem/>
-		<CartItem/>
-		<div>
-			<p className="d-flex justify-content-between"> 
-			<span>Subtotal • 4 item</span>
-			<span>$320.00</span>
-			</p>
-			<p className="d-flex justify-content-between"> 
-			<span>Tax</span>
-			<span>$5.00</span>
-			</p>
-			<p className="d-flex justify-content-between"> 
-			<span>Delivery fee</span>
-			<span>$2.00</span>
-			</p>
-			<p className="d-flex justify-content-between"> 
-			<span>Total</span>
-			<span>$320.00</span>
-			</p>
-		</div>
-		<Button variant="secondary" className="w-100 will-disable-button" onClick = { () => navigate("/location") }
-			>Place Order</Button>
-	</div>
-);
+const Cart = (props) => {
+  const { cart, pricing, deliveryInfo } = props;
+  const { subtotal, tax, delivery, total } = pricing;
+
+  const navigate = useNavigate();
+  return (
+    <section>
+      <div>
+        <p>
+          From <strong>{deliveryInfo?.business}</strong>
+        </p>
+        <p>Arriving in 20-30 min</p>
+        <p className="fw-bold">{deliveryInfo?.address}</p>
+      </div>
+      {cart.map((item) => (
+        <CartItem item={item} key={item.id} />
+      ))}
+      <div>
+        <p className="d-flex justify-content-between">
+          <span>Subtotal • {cart.length} item</span>
+          <span>${subtotal}</span>
+        </p>
+        <p className="d-flex justify-content-between">
+          <span>Tax</span>
+          <span>${tax}</span>
+        </p>
+        <p className="d-flex justify-content-between">
+          <span>Delivery fee</span>
+          <span>${delivery}</span>
+        </p>
+        <p className="d-flex justify-content-between">
+          <span>Total</span>
+          <span>${total}</span>
+        </p>
+      </div>
+      <Button
+        variant="secondary"
+        className="w-100 will-disable-button"
+        onClick={() => navigate("/location")} disabled = {deliveryInfo?.address ? false : true} >
+        Place Order
+      </Button>
+    </section>
+  );
 };
 
-export default Cart;
+const mapStateToProps = (state) => {
+  return {
+    cart: state.cart,
+    pricing: state.pricing,
+    deliveryInfo: state.deliveryInfo,
+  };
+};
+
+export default connect(mapStateToProps)(Cart);

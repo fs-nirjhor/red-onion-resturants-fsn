@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { Form, Button } from "react-bootstrap";
 import logo from "../../images/logo2.png";
@@ -77,6 +77,7 @@ const Login = (props) => {
           Login
         </Button>
       </Form>
+      <Link to="/signup" className="d-block mt-3 text-decoration-none">Don't have an account?</Link>
     </section>
   );
 };
