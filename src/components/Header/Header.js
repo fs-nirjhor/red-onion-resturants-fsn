@@ -7,6 +7,8 @@ import { connect } from "react-redux";
 import { removeLoggedUser } from "../../redux/actions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { signOut } from "firebase/auth";
+import {auth} from "../../firebaseConfig";
 
 const Header = (props) => {
   const { cart, loggedUser, removeLoggedUser } = props;
@@ -16,6 +18,13 @@ const Header = (props) => {
     backgroundColor: "red",
   };
   const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        console.log("Sign-out successful.");
+      })
+      .catch((error) => {
+        console.log(error.code);
+      });
     removeLoggedUser();
   };
   return (
@@ -27,7 +36,7 @@ const Header = (props) => {
           </NavLink>
           <Nav className="ms-auto">
             <span className="nav-link mx-1">
-              <FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon>  
+              <FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon>
               <strong> {cart.length}</strong>
             </span>
             {!loggedUser.email ? (

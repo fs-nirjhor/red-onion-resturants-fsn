@@ -4,9 +4,8 @@ import { useForm } from "react-hook-form";
 import { Form, Button } from "react-bootstrap";
 import logo from "../../images/logo2.png";
 
-import app from "../../firebaseConfig";
+import {auth} from "../../firebaseConfig";
 import {
-  getAuth,
   createUserWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
@@ -14,7 +13,6 @@ import {
 function Signup() {
 	const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
-  const auth = getAuth(app);
   const {
     register,
     handleSubmit,
@@ -53,7 +51,7 @@ function Signup() {
             <Form.Text>This field is required</Form.Text>
           )}
           {errors.name && errors.name.type === "pattern" && (
-            <Form.Text>Username must be less than 10 letter</Form.Text>
+            <Form.Text>Username must have 10 or less English letter</Form.Text>
           )}
         </Form.Group>
 

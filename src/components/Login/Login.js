@@ -7,15 +7,14 @@ import "./Login.css";
 import { connect } from "react-redux";
 import { addLoggedUser } from "../../redux/actions";
 
-import app from "../../firebaseConfig";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {auth} from "../../firebaseConfig";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 const Login = (props) => {
   const { addLoggedUser } = props;
   const location = useLocation();
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
-  const auth = getAuth(app);
   const {
     register,
     handleSubmit,
