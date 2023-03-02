@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/test-react-app/static/css/main.5b3ac4a5.css",
+    "main.js": "/test-react-app/static/js/main.dce99bb2.js",
+    "static/js/787.36a1eb2e.chunk.js": "/test-react-app/static/js/787.36a1eb2e.chunk.js",
+    "static/media/dinner4.png": "/test-react-app/static/media/dinner4.840c360b46f319dc4c43.png",
+    "static/media/dinner1.png": "/test-react-app/static/media/dinner1.cdc7380300f22917664e.png",
+    "static/media/dinner5.png": "/test-react-app/static/media/dinner5.1b3871b6556dcdb520e3.png",
+    "static/media/breakfast2.png": "/test-react-app/static/media/breakfast2.659ea00738d60d82f5ed.png",
+    "static/media/dinner2.png": "/test-react-app/static/media/dinner2.897df94a0a8614d806a0.png",
+    "static/media/breakfast5.png": "/test-react-app/static/media/breakfast5.c104e2cf5d2b3f929475.png",
+    "static/media/breakfast4.png": "/test-react-app/static/media/breakfast4.55e7035191413e587446.png",
+    "static/media/lunch4.png": "/test-react-app/static/media/lunch4.bc2a5b5c88f346ec99ba.png",
+    "static/media/breakfast3.png": "/test-react-app/static/media/breakfast3.0fee32eac2d04e7aab56.png",
+    "static/media/breakfast6.png": "/test-react-app/static/media/breakfast6.098a61e0012816474f06.png",
+    "static/media/breakfast1.png": "/test-react-app/static/media/breakfast1.029174cee5bc3d9aada4.png",
+    "static/media/dinner3.png": "/test-react-app/static/media/dinner3.336624e45be95b3f88e8.png",
+    "static/media/lunch6.png": "/test-react-app/static/media/lunch6.2d5416af283b0a9a5fe8.png",
+    "static/media/lunch5.png": "/test-react-app/static/media/lunch5.6e0cce8e11b0158a2227.png",
+    "static/media/lunch3.png": "/test-react-app/static/media/lunch3.0ad7af348a05466d0c6d.png",
+    "static/media/lunch2.png": "/test-react-app/static/media/lunch2.5f01f1ce4ad4a63c1027.png",
+    "static/media/architecture-building-city-2047397.png": "/test-react-app/static/media/architecture-building-city-2047397.450b2da7722246410b5d.png",
+    "static/media/dinner6.png": "/test-react-app/static/media/dinner6.72a66991a253b47059bb.png",
+    "static/media/chef-cook-food-33614.png": "/test-react-app/static/media/chef-cook-food-33614.af2df5de8c3080b484bc.png",
+    "static/media/lunch1.png": "/test-react-app/static/media/lunch1.1e64546f724cbd988498.png",
+    "static/media/adult-blur-blurred-background-687824.png": "/test-react-app/static/media/adult-blur-blurred-background-687824.2694c5b77c51223c023e.png",
+    "static/media/map.png": "/test-react-app/static/media/map.b5d8876e48aaa05d5f6a.png",
+    "static/media/bannerbackground.png": "/test-react-app/static/media/bannerbackground.0f3b87c042dc40563e27.png",
+    "static/media/Group 1151.png": "/test-react-app/static/media/Group 1151.79a1e10dbba901e493a2.png",
+    "static/media/logo.png": "/test-react-app/static/media/logo.1263bfd7a3c57cd1615e.png",
+    "static/media/logo2.png": "/test-react-app/static/media/logo2.7419725de4a80970e3a8.png",
+    "static/media/Group 1152.png": "/test-react-app/static/media/Group 1152.7ac997a6a5b63e1a7b95.png",
+    "index.html": "/test-react-app/index.html",
+    "main.5b3ac4a5.css.map": "/test-react-app/static/css/main.5b3ac4a5.css.map",
+    "main.dce99bb2.js.map": "/test-react-app/static/js/main.dce99bb2.js.map",
+    "787.36a1eb2e.chunk.js.map": "/test-react-app/static/js/787.36a1eb2e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5b3ac4a5.css",
+    "static/js/main.dce99bb2.js"
+  ]
+}
