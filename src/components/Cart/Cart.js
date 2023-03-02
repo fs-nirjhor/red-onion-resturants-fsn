@@ -11,12 +11,14 @@ const Cart = (props) => {
   return (
     <section>
       <div>
+      { deliveryInfo?.address && 
         <p>
           From <strong>{deliveryInfo?.business}</strong>
         </p>
         <p>Arriving in 20-30 min</p>
         <p className="fw-bold">{deliveryInfo?.address}</p>
       </div>
+      }
       {cart.map((item) => (
         <CartItem item={item} key={item.id} />
       ))}
